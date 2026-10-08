@@ -28,5 +28,15 @@ The project files are numbered sequentially to ensure smooth execution without b
 | **`09 Installation script.sql`** | Master orchestration script that builds the entire system in one command. |
 
 Run the master setup script using `psql` from your terminal or Git Bash inside the project directory:
-```bash
+```bashaer
 psql -U postgres -d restaurant_db -f "09 Installation script.sql"
+
+After installing the reports from the views can be ran like this :
+-- 1. Daily Financial & Revenue Summary
+SELECT * FROM v_daily_revenue WHERE restaurant_id = 1;
+-- 2. Top-Selling Menu Item per Restaurant (Rank #1)
+SELECT * FROM v_top_ordered_item_per_restaurant;
+-- 3. Staff Upselling & Kitchen Fulfillment Performance Scorecard
+SELECT * FROM v_employee_performance WHERE restaurant_id = 1;
+-- 4. Hourly Customer Traffic Heatmap
+SELECT * FROM v_peak_dining_hours WHERE restaurant_id = 1 ORDER BY day_number, hour_of_day;
