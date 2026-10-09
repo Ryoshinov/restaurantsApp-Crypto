@@ -234,8 +234,14 @@ JOIN (
     ON item.category_name = mc.name
 CROSS JOIN LATERAL (
     SELECT 
-        CASE WHEN random() < 0.20 THEN ROUND((item.price * (0.80 + random() * 0.10))::numeric, 2) ELSE NULL END AS discounted_price,
-        CASE WHEN random() < 0.10 THEN TRUE ELSE FALSE END AS discount_active
+        calc.d_price AS discounted_price,
+        (calc.d_price IS NOT NULL) AS discount_active
+    FROM (
+        SELECT CASE 
+            WHEN random() < 0.20 THEN ROUND((item.price * (0.80 + random() * 0.10))::numeric, 2)
+            ELSE NULL 
+        END AS d_price
+    ) calc
 ) disc;
 
 -- 9. Populate Reservations
