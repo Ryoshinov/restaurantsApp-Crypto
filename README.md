@@ -33,9 +33,15 @@ The project files are numbered sequentially to ensure smooth execution without b
 | **`08 Analytical Views.sql`** | Pre-built views for reporting and REST API integration. |
 | **`09 Installation script.sql`** | Master orchestration script that builds the entire system in one command. |
 
-Run the master setup script using `psql` from your terminal or Git Bash inside the project directory:
+Steps to install the database and test locally:
+1. Go to your folder using git bash or Administrator git cmd with cd command and clone the repository :
+ git clone https://github.com/Ryoshinov/restaurantsApp-Crypto.git
+ 
+2. Run the master setup script using `psql` from your terminal or Git Bash inside the project directory:
 ```bashaer
 psql -U postgres -d restaurant_db -f "09 Installation script.sql"
+
+3. Run the analytical views in a separate sql script for example in DBeaver:
 
 After installing the reports from the views can be ran like this :
 -- 1. Daily Financial & Revenue Summary
