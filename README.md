@@ -5,6 +5,12 @@ Restaurant POS & Business Intelligence Database
 
 A production-grade PostgreSQL relational database system for multi-location restaurant POS management, order fulfillment tracking, session dynamics, dynamic discount handling, and enterprise analytical reporting.
 
+The Idea is also when having and connecting a front-end to have an option when creating a "dinning-session" to be able to "glue" several tables for bigger reservations and that way to create a one-time "dinning-session" for tables for example 7-10-13 on exact floor.
+This application will have the opportunity to be used for different kind of venues from restaurants to bars and coffee shops.
+The important new futures that are being used are the dinning session which is the mechanism that is used for making for example several tables and "concatenate" them into one dinning session for example for big reservations for 10-20+ people.
+The other great future is that every person is treated as an object and can pay separately and that is based on "chairs" but also you can have a total for the dinning session, and then every person to have a session.
+
+
  Features & Architecture
 * **Multi-Location Hierarchy:** Supports multiple restaurant entities, floor zones, physical tables with capacity metrics, and active menu items.
 * **Dynamic Menu Discounting:** Automatically handles menu item promotion pricing and line-item revenue calculations.
